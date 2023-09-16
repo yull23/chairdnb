@@ -3,6 +3,11 @@ import { css } from "@emotion/react";
 import "./Container.css";
 
 export const titles = {
+  plusAccommodation: {
+    title: "Chairdnb Plus accommodation",
+    description:
+      "A selection of accommodation verified according to quality and connectivity criteria",
+  },
   adventures: {
     title: "Discover Chairdnb adventures",
     description:

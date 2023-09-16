@@ -5,6 +5,7 @@ import Adventures from "./components/Adventures/Adventures";
 import Experiences from "./components/Experiences/Experiences";
 import FeatureDestinations from "./components/FeaturedDestinations/FeatureDestinations";
 import ExplorerCategories from "./components/ExplorerCategories/ExplorerCategories";
+import PlusAccommodation from "./components/PlusAccommodation/PlusAccommodation";
 
 let dataArray = [
   {
@@ -165,6 +166,7 @@ function App() {
       `}
     >
       <ExplorerCategories />
+      <PlusAccommodation />
       <Adventures dataArray={dataSmall} />
       <Accommodation dataArray={dataMedium} />
       <Experiences dataArray={dataArray.slice(0, 6)} />
