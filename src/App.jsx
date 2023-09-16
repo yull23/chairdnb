@@ -1,6 +1,9 @@
-import Card from "./components/Card/Card";
-import { Container } from "./components/Container/Container";
-import { Grid } from "./components/Grid/Grid";
+import Accommodation from "./components/Accommodation/Accommodation";
+import Adventures from "./components/Adventures/Adventures";
+import Experiences from "./components/Experiences/Experiences";
+import FeatureDestinations from "./components/FeaturedDestinations/FeatureDestinations";
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 
 let dataArray = [
   {
@@ -148,74 +151,23 @@ let dataArray = [
 const dataSmall = [...dataArray, ...dataArray.slice(0, 2)];
 const dataMedium = dataArray.slice(0, 8);
 const dataLarge = dataArray.slice(5, 8);
-const titles = {
-  adventures: {
-    title: "Discover Chairdnb adventures",
-    description:
-      "Multi-day hackatons organized by local experts with activities, meals and accommodation included",
-  },
-  accommodation: {
-    title: "Accommodation around the world",
-    description: "",
-  },
-  experiences: {
-    title: "Highly rated experiences",
-    description:
-      "Multi-day extreme programming sessions organized by local experts with activities, meals and accommodation included",
-  },
-  featured: {
-    title: "Featured Chairdnb Plus Destinations",
-    description:
-      "Multi-day pair programming sessions organized by local experts with activities, meals and accommodation included",
-  },
-};
 
 function App() {
   return (
-    <>
-      <Container
-        title={titles.adventures.title}
-        description={titles.adventures.description}
-      >
-        <Grid type="small" gap="16px">
-          {dataSmall.map((element) => (
-            <Card type="small" data={element} key={element.id} />
-          ))}
-        </Grid>
-      </Container>
-
-      <Container
-        title={titles.accommodation.title}
-        description={titles.accommodation.description}
-      >
-        <Grid type="medium" gap="16px">
-          {dataMedium.map((element) => (
-            <Card type="medium" data={element} key={element.id} />
-          ))}
-        </Grid>
-      </Container>
-      <Container
-        title={titles.experiences.title}
-        description={titles.experiences.description}
-      >
-        <Grid type="small" gap="16px">
-          {dataArray.slice(0, 6).map((element) => (
-            <Card type="small" data={element} key={element.id} />
-          ))}
-        </Grid>
-      </Container>
-
-      <Container
-        title={titles.featured.title}
-        description={titles.featured.description}
-      >
-        <Grid type="large" gap="16px" key="Plus">
-          {dataLarge.map((element) => (
-            <Card type="large" data={element} key={element.id} />
-          ))}
-        </Grid>
-      </Container>
-    </>
+    <div
+      css={css`
+        display: flex;
+        flex-direction: column;
+        gap: 88px;
+        max-width: 1208px;
+        margin: auto;
+      `}
+    >
+      <Adventures dataArray={dataSmall} />
+      <Accommodation dataArray={dataMedium} />
+      <Experiences dataArray={dataArray.slice(0, 6)} />
+      <FeatureDestinations dataArray={dataLarge} />
+    </div>
   );
 }
 
