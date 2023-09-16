@@ -1,7 +1,15 @@
-import "./Card.css";
+import CardSmall from "./Cards/cards-small";
+import CardMedium from "./Cards/cards-medium";
+import CardLarge from "./Cards/cards-large";
 
-const Card = ({ children }) => {
-  return <div className="card">{children}</div>;
+const Card = ({ type, data }) => {
+  return (
+    <>
+      {type == "small" ? <CardSmall data={data} /> : ""}
+      {type == "medium" ? <CardMedium data={data} /> : ""}
+      {type == "large" ? <CardLarge data={data} /> : ""}
+    </>
+  );
 };
 export default Card;
 
