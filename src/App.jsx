@@ -1,9 +1,10 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import Accommodation from "./components/Accommodation/Accommodation";
 import Adventures from "./components/Adventures/Adventures";
 import Experiences from "./components/Experiences/Experiences";
 import FeatureDestinations from "./components/FeaturedDestinations/FeatureDestinations";
-/** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import ExplorerCategories from "./components/ExplorerCategories/ExplorerCategories";
 
 let dataArray = [
   {
@@ -163,6 +164,7 @@ function App() {
         margin: auto;
       `}
     >
+      <ExplorerCategories />
       <Adventures dataArray={dataSmall} />
       <Accommodation dataArray={dataMedium} />
       <Experiences dataArray={dataArray.slice(0, 6)} />
