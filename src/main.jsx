@@ -3,7 +3,11 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { Global } from "@emotion/react";
 import { global, reset } from "./assets/global";
-import { CardMedium, CardLarge } from "./components/Card/Cards/cards";
+import {
+  CardMedium,
+  CardLarge,
+  CardSmall,
+} from "./components/Card/Cards/cards";
 
 let data = {
   id: 10,
@@ -24,6 +28,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Global styles={reset} />
     <Global styles={global} />
+    <CardSmall data={data} />
     <CardMedium data={data} />
     <CardLarge data={data} />
     {/* <App /> */}
