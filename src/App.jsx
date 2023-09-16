@@ -6,7 +6,7 @@ import Experiences from "./components/Experiences/Experiences";
 import FeatureDestinations from "./components/FeaturedDestinations/FeatureDestinations";
 import ExplorerCategories from "./components/ExplorerCategories/ExplorerCategories";
 import PlusAccommodation from "./components/PlusAccommodation/PlusAccommodation";
-import Form from "./components/Form/Form";
+import Header from "./components/Header/Header";
 
 let dataArray = [
   {
@@ -157,24 +157,26 @@ const dataLarge = dataArray.slice(5, 8);
 
 function App() {
   return (
-    <div
-      css={css`
-        display: flex;
-        flex-direction: column;
-        gap: 88px;
-        max-width: 1208px;
-        margin: auto;
-      `}
-    >
-      <Form />
-
-      <ExplorerCategories />
-      <PlusAccommodation />
-      <Adventures dataArray={dataSmall} />
-      <Accommodation dataArray={dataMedium} />
-      <Experiences dataArray={dataArray.slice(0, 6)} />
-      <FeatureDestinations dataArray={dataLarge} />
-    </div>
+    <>
+      <Header form={false} />
+      <main
+        css={css`
+          border: 1px solid red;
+          display: flex;
+          flex-direction: column;
+          gap: 88px;
+          max-width: 1208px;
+          margin: auto;
+        `}
+      >
+        <ExplorerCategories />
+        <PlusAccommodation />
+        <Adventures dataArray={dataSmall} />
+        <Accommodation dataArray={dataMedium} />
+        <Experiences dataArray={dataArray.slice(0, 6)} />
+        <FeatureDestinations dataArray={dataLarge} />
+      </main>
+    </>
   );
 }
 

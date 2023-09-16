@@ -1,7 +1,7 @@
 .form {
   max-width: 391px;
   height: 508px;
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -13,7 +13,7 @@
   font-size: 32px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
+  line-height: 1;
 }
 
 .form__inputs {
@@ -23,7 +23,9 @@
 }
 
 .form__container-dates {
-  display: flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
 }
 
 .form__component {
@@ -73,4 +75,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   line-height: normal;
   border-radius: 4px;
   background: var(--primary-red, #ff5a5f);
+}
+
+@media screen and (max-width: 576px) {
+  .form__title {
+    font-size: 1.5rem;
+  }
+
+  input[type="date"] {
+    font-size: 14px;
+  }
 }
