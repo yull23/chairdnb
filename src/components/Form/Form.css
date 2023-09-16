@@ -1,0 +1,76 @@
+.form {
+  max-width: 391px;
+  height: 508px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 4px;
+  background: var(--secondary-white, #fff);
+}
+.form__title {
+  color: var(--secondary-dark-grey, #484848);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.form__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form__container-dates {
+  display: flex;
+}
+
+.form__component {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form__label {
+  color: var(--secondary-dark-grey, #484848);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.input {
+  height: 3rem;
+  border-radius: 2px;
+  border: 1px solid #e3e3e3;
+  background: var(--secondary-white, #fff);
+  padding: 1rem 1rem 13px 1rem;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.form__component-button {
+  flex-direction: row;
+  justify-content: end;
+}
+
+.form__button {
+  border: none;
+  text-transform: capitalize;
+  width: 146px;
+  height: 48px;
+  flex-shrink: 0;
+  color: var(--secondary-white, #fff);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 4px;
+  background: var(--primary-red, #ff5a5f);
+}
