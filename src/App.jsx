@@ -9,6 +9,7 @@ import PlusAccommodation from "./components/PlusAccommodation/PlusAccommodation"
 import Header from "./components/Header/Header";
 import { useEffect, useState } from "react";
 import { getAllPlaces } from "./services/get-places";
+import { HomePage } from "./Pages/HomePage/HomePage";
 
 function App() {
   const [allPlaces, setAllPlaces] = useState([]);
@@ -35,6 +36,7 @@ function App() {
 
   return (
     <>
+      <HomePage />
       <Header form={true} />
       <main
         css={css`
