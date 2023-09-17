@@ -4,6 +4,7 @@ export function days(data) {
     return new Date(a[0], a[2], a[1]);
   }
   return (
-    (newDate(data.end_date) - newDate(data.start_date)) / (1000 * 60 * 60 * 24)
+    Math.abs(newDate(data.end_date) - newDate(data.start_date)) /
+    (1000 * 60 * 60 * 24)
   );
 }

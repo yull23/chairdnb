@@ -15,6 +15,15 @@ export default function Header({ form }) {
       `}
     >
       {form ? (
+        <a href="#" className="header__link">
+          @ chairdnb
+        </a>
+      ) : (
+        <a href="#" className="header__link">
+          BACK
+        </a>
+      )}
+      {form ? (
         <Form />
       ) : (
         <p className="header__text">SEARCH RESULTS FOR URUGUAY</p>

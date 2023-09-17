@@ -161,11 +161,11 @@ function App() {
       <Header form={false} />
       <main
         css={css`
-          border: 1px solid red;
           display: flex;
           flex-direction: column;
           gap: 88px;
-          max-width: 1208px;
+          max-width: 1366px;
+          padding: 88px 80px;
           margin: auto;
         `}
       >
