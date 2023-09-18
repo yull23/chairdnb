@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-export const Grid = ({ type, gap, children }) => {
+export const Grid = ({ type, gap, children, rowGap }) => {
   const minMaxWidths = {
     small: "187px",
     medium: "289px",
@@ -19,6 +19,7 @@ export const Grid = ({ type, gap, children }) => {
         );
         gap: ${gap};
         justify-content: center;
+        row-gap: ${rowGap};
       `}
       className="grid"
     >
