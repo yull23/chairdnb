@@ -36,7 +36,7 @@ function App() {
 
   return (
     <>
-      <HomePage />
+      {/* <HomePage /> */}
       <Header form={true} />
       <main
         css={css`
