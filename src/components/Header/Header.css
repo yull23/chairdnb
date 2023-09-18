@@ -1,6 +1,5 @@
 .header {
   max-width: 1366px;
-  height: 750px;
   margin: 0 auto 0 auto;
   aspect-ratio: 1366 / 750;
   display: flex;
@@ -26,4 +25,11 @@
   font-style: normal;
   font-weight: 300;
   line-height: normal;
+}
+
+@media screen and (max-width: 992px) {
+  .header__text {
+    font-size: 2.5rem;
+    margin-top: 10rem;
+  }
 }

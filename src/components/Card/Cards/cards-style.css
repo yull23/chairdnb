@@ -58,6 +58,7 @@
   aspect-ratio: 0.783 / 1;
   border-radius: 0.25rem;
   padding: 0;
+  object-fit: cover;
 }
 
 .card-small__descriptions {
@@ -115,6 +116,7 @@
   aspect-ratio: 1.45 / 1;
   border-radius: 0.25rem;
   padding: 0;
+  object-fit: cover;
 }
 
 .card-medium__descriptions {
@@ -190,6 +192,7 @@
   aspect-ratio: 1.63 / 1;
   border-radius: 0.75rem;
   padding: 0;
+  object-fit: cover;
 }
 
 .card-large__description {
