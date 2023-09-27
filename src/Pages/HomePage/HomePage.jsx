@@ -7,35 +7,50 @@ import ExplorerCategories from "../../components/ExplorerCategories/ExplorerCate
 import FeatureDestinations from "../../components/FeaturedDestinations/FeatureDestinations";
 import Header from "../../components/Header/Header";
 import PlusAccommodation from "../../components/PlusAccommodation/PlusAccommodation";
+import { getAllPlaces } from "../../services/get-places";
+import { Outlet, useLoaderData, useMatch } from "react-router-dom";
 
-export function HomePage({
-  dataAll,
-  dataAdventures,
-  dataAccommodations,
-  dataExperiences,
-  dataFeatureds,
-}) {
+export async function loader() {
+  const allAdventures = await getAllPlaces("adventures");
+  const allAccommodations = await getAllPlaces("accommodations");
+  const allExperiences = await getAllPlaces("experiences");
+  const allFeatured = await getAllPlaces("featured");
+  return {
+    allAdventures,
+    allAccommodations,
+    allExperiences,
+    allFeatured,
+  };
+}
+
+export function HomePage() {
+  const { allAdventures, allAccommodations, allExperiences, allFeatured } =
+    useLoaderData();
+  const isSearchRoute = useMatch("/");
   return (
     <>
-      <Header form={true} />
-      <main
-        css={css`
-          display: flex;
-          flex-direction: column;
-          gap: 88px;
-          max-width: 1366px;
-          padding: 88px 80px;
-          margin: auto;
-        `}
-      >
-        <ExplorerCategories />
-        <PlusAccommodation />
-        <Adventures dataArray={dataAdventures} />
-        <Accommodation dataArray={dataAccommodations} />
-        <Experiences dataArray={dataExperiences} />
-        <FeatureDestinations dataArray={dataFeatureds} />
-      </main>
-      ;
+      <div hidden={!isSearchRoute}>
+        {" "}
+        <Header form={true} />
+        <main
+          css={css`
+            display: flex;
+            flex-direction: column;
+            gap: 88px;
+            max-width: 1366px;
+            padding: 88px 80px;
+            margin: auto;
+          `}
+        >
+          <ExplorerCategories />
+          <PlusAccommodation />
+          <Adventures dataArray={allAdventures} />
+          <Accommodation dataArray={allAccommodations} />
+          <Experiences dataArray={allExperiences} />
+          <FeatureDestinations dataArray={allFeatured} />
+        </main>
+      </div>
+      <Outlet />
     </>
   );
 }

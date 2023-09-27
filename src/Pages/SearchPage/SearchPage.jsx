@@ -9,7 +9,8 @@ import Card from "../../components/Card/Card";
 export function SearchPage({ dataAll, filter }) {
   return (
     <>
-      <Header form={false} />
+      Aaaaaaaaaaaaaaaaa
+      {/* <Header form={false} />
       <main
         css={css`
           display: flex;
@@ -27,8 +28,7 @@ export function SearchPage({ dataAll, filter }) {
             ))}
           </Grid>
         </Container>
-      </main>
-      ;
+      </main> */}
     </>
   );
 }
