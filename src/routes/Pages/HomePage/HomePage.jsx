@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import Accommodation from "../../components/Accommodation/Accommodation";
-import Adventures from "../../components/Adventures/Adventures";
-import Experiences from "../../components/Experiences/Experiences";
-import ExplorerCategories from "../../components/ExplorerCategories/ExplorerCategories";
-import FeatureDestinations from "../../components/FeaturedDestinations/FeatureDestinations";
-import Header from "../../components/Header/Header";
-import PlusAccommodation from "../../components/PlusAccommodation/PlusAccommodation";
-import { getAllPlaces } from "../../services/get-places";
+import Accommodation from "../../../components/Accommodation/Accommodation";
+import Adventures from "../../../components/Adventures/Adventures";
+import Experiences from "../../../components/Experiences/Experiences";
+import ExplorerCategories from "../../../components/ExplorerCategories/ExplorerCategories";
+import FeatureDestinations from "../../../components/FeaturedDestinations/FeatureDestinations";
+import Header from "../../../components/Header/Header";
+import PlusAccommodation from "../../../components/PlusAccommodation/PlusAccommodation";
+import { getAllPlaces } from "../../../services/get-places";
 import { Outlet, useLoaderData, useMatch } from "react-router-dom";
 
 export async function loader() {

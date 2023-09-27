@@ -1,8 +1,9 @@
 import "./Form.css";
+import { Form } from "react-router-dom";
 
-export default function Form() {
+export default function FormSearch() {
   return (
-    <form action="" className="form">
+    <Form id="search-form" role="search" className="form">
       <h2 className="form__title">
         Book unique accommodations to code as never before
       </h2>
@@ -42,6 +43,6 @@ export default function Form() {
       <div className="form__component form__component-button">
         <button className="form__button">search</button>
       </div>
-    </form>
+    </Form>
   );
 }
