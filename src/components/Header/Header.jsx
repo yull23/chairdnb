@@ -3,8 +3,11 @@ import { css } from "@emotion/react";
 import FormSearch from "../Form/Form";
 import img from "./img.svg";
 import "./Header.css";
+import { useParams } from "react-router-dom";
 
 export default function Header({ form }) {
+  const params = useParams();
+  console.log(params);
   return (
     <header
       className="header"

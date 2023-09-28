@@ -12,12 +12,13 @@ export default function FormSearch() {
     e.preventDefault();
     const formData = new FormData(e.target);
 
-    // Actualiza los parámetros de búsqueda en la URL
+    // console.log(searchParams);
+    // Update search parameters in the URL
     formData.forEach((value, key) => {
       searchParams.set(key, value);
     });
-    console.log(searchParams);
-    // Navega a la ruta con los parámetros actualizados
+    // console.log(searchParams);
+    // Navigate to the route with updated parameters
     navigate(`/search?${searchParams.toString()}`);
   };
 
