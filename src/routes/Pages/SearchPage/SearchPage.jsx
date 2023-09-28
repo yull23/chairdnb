@@ -22,6 +22,13 @@ export async function loader({ request }) {
   // Filtrar
   if (params.where != "") {
     allPlaces = [
+      ...allPlaces.filter(
+        (place) => place.country.toLowerCase() === params.where.toLowerCase()
+      ),
+    ];
+  }
+  if (params.count != "") {
+    allPlaces = [
       ...allPlaces.filter((place) => {
         const randomNum = Math.floor(Math.random() * 5) + 1;
         return randomNum == parseInt(params.count);
@@ -43,14 +50,6 @@ export async function loader({ request }) {
     ];
   }
   console.log(allPlaces[0]);
-
-  if (params.count != "") {
-    allPlaces = [
-      ...allPlaces.filter(
-        (place) => place.country.toLowerCase() === params.where.toLowerCase()
-      ),
-    ];
-  }
 
   return {
     allPlaces,

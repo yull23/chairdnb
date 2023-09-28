@@ -6,8 +6,6 @@ import "./Header.css";
 import { useParams } from "react-router-dom";
 
 export default function Header({ form }) {
-  const params = useParams();
-  console.log(params);
   return (
     <header
       className="header"
