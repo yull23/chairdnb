@@ -3,7 +3,6 @@ import { css } from "@emotion/react";
 import FormSearch from "../Form/Form";
 import img from "./img.svg";
 import "./Header.css";
-import { handleSubmit } from "../../routes/Pages/HomePage/HomePage";
 
 export default function Header({ form }) {
   return (
@@ -25,7 +24,7 @@ export default function Header({ form }) {
         </a>
       )}
       {form ? (
-        <FormSearch onSubmit={handleSubmit} />
+        <FormSearch />
       ) : (
         <p className="header__text">SEARCH RESULTS FOR URUGUAY</p>
       )}

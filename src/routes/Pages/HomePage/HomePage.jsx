@@ -48,7 +48,7 @@ export function HomePage() {
     <>
       <div hidden={!isSearchRoute}>
         {" "}
-        <Header form={true} onSubmit={handleSubmit} />
+        <Header form={true} />
         <main
           css={css`
             display: flex;
