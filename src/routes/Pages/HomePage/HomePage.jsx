@@ -23,15 +23,32 @@ export async function loader() {
   };
 }
 
+export function handleSubmit(e) {
+  console.log(e.target);
+
+  // e.preventDefault();
+  // const formData = new FormData(e.target);
+  // const where = formData.get("where");
+  // const arrival = formData.get("arrival");
+  // const departure = formData.get("departure");
+  // const count = formData.get("developers");
+  // Construye la URL de búsqueda con los parámetros
+  // const searchUrl = `/search?where=${where}&arrival=${arrival}&departure=${departure}&count=${count}`;
+
+  // Redirige a la página de búsqueda con los parámetros
+  // console.log(searchUrl);
+}
+
 export function HomePage() {
   const { allAdventures, allAccommodations, allExperiences, allFeatured } =
     useLoaderData();
   const isSearchRoute = useMatch("/");
+
   return (
     <>
       <div hidden={!isSearchRoute}>
         {" "}
-        <Header form={true} />
+        <Header form={true} onSubmit={handleSubmit} />
         <main
           css={css`
             display: flex;
