@@ -3,9 +3,8 @@ import { css } from "@emotion/react";
 import FormSearch from "../Form/Form";
 import img from "./img.svg";
 import "./Header.css";
-import { useParams } from "react-router-dom";
 
-export default function Header({ form }) {
+export default function Header({ form, where }) {
   return (
     <header
       className="header"
@@ -27,7 +26,10 @@ export default function Header({ form }) {
       {form ? (
         <FormSearch />
       ) : (
-        <p className="header__text">SEARCH RESULTS FOR URUGUAY</p>
+        <p className="header__text">
+          SEARCH RESULTS FOR{" "}
+          {where == "" ? "ALL COUNTRIES" : where.toUpperCase()}
+        </p>
       )}
     </header>
   );

@@ -5,11 +5,13 @@ import Header from "../../../components/Header/Header";
 import { Container } from "../../../components/Container/Container";
 import { Grid } from "../../../components/Grid/Grid";
 import Card from "../../../components/Card/Card";
-import { useLoaderData, useParams, useSearchParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { getAllPlaces } from "../../../services/get-places";
 
 export async function loader({ request }) {
   let allPlaces = await getAllPlaces("all"); // datos de la API
+  console.log(allPlaces);
+
   // URL
   const url = new URL(request.url);
   const params = {
@@ -27,14 +29,6 @@ export async function loader({ request }) {
       ),
     ];
   }
-  if (params.count != "") {
-    allPlaces = [
-      ...allPlaces.filter((place) => {
-        const randomNum = Math.floor(Math.random() * 5) + 1;
-        return randomNum == parseInt(params.count);
-      }),
-    ];
-  }
   if (params.arrival != "") {
     allPlaces = [
       ...allPlaces.filter(
@@ -49,7 +43,14 @@ export async function loader({ request }) {
       ),
     ];
   }
-  console.log(allPlaces[0]);
+  if (params.count != "") {
+    allPlaces = [
+      ...allPlaces.filter((place) => {
+        const randomNum = Math.floor(Math.random() * 5) + 1;
+        return randomNum == parseInt(params.count);
+      }),
+    ];
+  }
 
   return {
     allPlaces,
@@ -63,7 +64,7 @@ export function SearchPage() {
 
   return (
     <>
-      <Header form={false} />
+      <Header form={false} where={where} />
       <main
         css={css`
           display: flex;
